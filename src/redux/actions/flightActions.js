@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import options from "../../constants/constants";
+import constant from "../../constants/constants";
 import axios from "axios";
 
 export const getFlights = createAsyncThunk("flight/getFlights", async () => {
-  const res = await axios.request(options);
+  const res = await axios.request(constant.options);
 
   const refined = res.data.aircraft.map((i) => ({
     id: i[0],

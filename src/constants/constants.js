@@ -14,4 +14,11 @@ const options = {
   },
 };
 
-export default options;
+const optionsTwo = {
+  headers: {
+    "x-rapidapi-key": "a065931112mshade584e262c4e55p1d526bjsn1efa31a216d9",
+    "x-rapidapi-host": "flight-radar1.p.rapidapi.com",
+  },
+};
+
+export default { options, optionsTwo };

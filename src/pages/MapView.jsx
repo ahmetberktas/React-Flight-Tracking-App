@@ -11,7 +11,7 @@ const planeIcon = new L.Icon({
   popupAnchor: [0, -20],
 });
 
-const MapView = () => {
+const MapView = ({ openModal }) => {
   const state = useSelector((store) => store.flight);
 
   return (
@@ -34,7 +34,12 @@ const MapView = () => {
           <Popup className="custom-popup">
             <div className="popup">
               <span className="flight-code">Uçuş Kodu: {flight.code}</span>
-              <button className="details-button">Detay Gör</button>
+              <button
+                onClick={() => openModal(flight.id)}
+                className="details-button"
+              >
+                Detay Gör
+              </button>
             </div>
           </Popup>
         </Marker>
