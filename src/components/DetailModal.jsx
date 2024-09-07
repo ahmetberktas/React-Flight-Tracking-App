@@ -2,17 +2,24 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import constant from "../constants/constants";
 import Loader from "../components/Loader";
+import { useDispatch } from "react-redux";
+import { setPath } from "../redux/slices/flightSlice";
 
 const DetailModal = ({ closeModal, detailId }) => {
+  const dispatch = useDispatch();
   const [detail, setDetail] = useState(null);
 
   useEffect(() => {
+    setDetail(null);
     axios
       .get(
         `https://flight-radar1.p.rapidapi.com/flights/detail?flight=${detailId}`,
         constant.optionsTwo
       )
-      .then((res) => setDetail(res.data))
+      .then((res) => {
+        setDetail(res.data);
+        dispatch(setPath(res.data.trail));
+      })
       .catch((err) => console.log(err));
   }, [detailId]);
 

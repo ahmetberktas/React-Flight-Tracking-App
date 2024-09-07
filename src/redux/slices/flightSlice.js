@@ -5,12 +5,20 @@ const initialState = {
   isLoading: false,
   isError: false,
   flights: [],
+  path: [],
 };
 
 const flightSlice = createSlice({
   name: "flight",
   initialState,
-  reducers: {},
+  reducers: {
+    setPath: (state, action) => {
+      state.path = action.payload;
+    },
+    clearPath: (state, action) => {
+      state.path = [];
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getFlights.pending, (state) => {
       state.isLoading = true;
@@ -29,3 +37,4 @@ const flightSlice = createSlice({
 });
 
 export default flightSlice.reducer;
+export const { setPath } = flightSlice.actions;

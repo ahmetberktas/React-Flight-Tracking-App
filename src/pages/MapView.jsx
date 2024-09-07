@@ -1,6 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Polyline,
+} from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -44,6 +50,7 @@ const MapView = ({ openModal }) => {
           </Popup>
         </Marker>
       ))}
+      <Polyline positions={state.path} />
     </MapContainer>
   );
 };
