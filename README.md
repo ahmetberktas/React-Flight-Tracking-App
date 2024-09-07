@@ -8,4 +8,3 @@
 - leaflet
 - react-leaflet
 - react-paginate
-- bootstrap

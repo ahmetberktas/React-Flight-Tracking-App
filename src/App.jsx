@@ -13,7 +13,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getFlights());
+    setInterval(() => dispatch(getFlights()), 5000);
   }, []);
 
   const openModal = (id) => {
@@ -43,7 +43,11 @@ const App = () => {
           Liste Görünümü
         </button>
       </div>
-      {isMapView ? <MapView openModal={openModal} /> : <ListView />}
+      {isMapView ? (
+        <MapView openModal={openModal} />
+      ) : (
+        <ListView openModal={openModal} />
+      )}
       {isModalOpen && (
         <DetailModal closeModal={closeModal} detailId={detailId}></DetailModal>
       )}
