@@ -9,14 +9,14 @@ const options = {
     limit: "300",
   },
   headers: {
-    "x-rapidapi-key": "a065931112mshade584e262c4e55p1d526bjsn1efa31a216d9",
+    "x-rapidapi-key": "00f1618f09msh730d5353bb65432p1e4527jsn28a2bb2229b1",
     "x-rapidapi-host": "flight-radar1.p.rapidapi.com",
   },
 };
 
 const optionsTwo = {
   headers: {
-    "x-rapidapi-key": "a065931112mshade584e262c4e55p1d526bjsn1efa31a216d9",
+    "x-rapidapi-key": "00f1618f09msh730d5353bb65432p1e4527jsn28a2bb2229b1",
     "x-rapidapi-host": "flight-radar1.p.rapidapi.com",
   },
 };

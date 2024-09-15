@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-const Header = () => {
+const Header = ({ refreshFlights }) => {
   const state = useSelector((store) => store.flight);
   return (
     <header className="header">
@@ -16,6 +16,9 @@ const Header = () => {
             : state.isError
             ? "Uçuşlar Hesaplanamadı"
             : state.flights.length + " Uçuş Bulundu"}
+        </button>
+        <button className="refresh-button" onClick={refreshFlights}>
+          Yenile
         </button>
       </div>
     </header>

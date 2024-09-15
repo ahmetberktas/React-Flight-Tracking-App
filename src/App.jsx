@@ -12,9 +12,15 @@ const App = () => {
   const [detailId, setDetailId] = useState(null);
   const dispatch = useDispatch();
 
+  /* Sayfa Yüklendiğinde Çalışır */
   useEffect(() => {
-    setInterval(() => dispatch(getFlights()), 5000);
-  }, []);
+    dispatch(getFlights());
+  }, [dispatch]);
+
+  /* Yenile Buttonuna Click olduğunda çalışır */
+  const refreshFlights = () => {
+    dispatch(getFlights());
+  };
 
   const openModal = (id) => {
     setDetailId(id);
@@ -28,7 +34,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header refreshFlights={refreshFlights} />
       <div className="buttons-container">
         <button
           className={`view-button ${isMapView ? "active" : ""}`}

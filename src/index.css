@@ -47,6 +47,17 @@ body {
     opacity: 0.7;
 }
 
+.header-right .refresh-button {
+    background-color: rgba(0, 128, 0, 0.61);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
 .buttons-container {
     text-align: center;
     margin-top: 20px;
